@@ -5,6 +5,11 @@
     <li>
       <%= link_to article.title, article_path(article) %>
     </li>
+    <p>
+	<% if article.image.exists? %>
+		<%= image_tag article.image.url(:thumb) %>
+	<% end %>
+	</p>
   <% end %>
 </ul>
 
